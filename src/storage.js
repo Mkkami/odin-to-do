@@ -1,4 +1,4 @@
-import {Todo, Project, Task, Priority} from "./todo"
+import {Todo, Project, Task, Priority} from "./structures"
 import JsonToTodo from "./mapper";
 
 export function isInStorage() {

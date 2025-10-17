@@ -53,6 +53,10 @@ button:hover {
     box-shadow: 1px 1px 1px gray;
 }
 
+#sidebar button[selected] {
+    background-color: gray;
+}
+
 #content {
     padding: 2em 10%;
     display: flex;
@@ -60,11 +64,13 @@ button:hover {
     flex: 4;
 }
 
+
 .task {
     display: flex;
     padding: 0 1em;
     gap: 1em;
     box-shadow: 5px 5px 5px gray;
+    margin: 1em;
 }
 
 .task > div {

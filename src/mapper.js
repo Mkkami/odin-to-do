@@ -1,4 +1,4 @@
-import { Todo, Project, Task, Priority } from "./todo";
+import { Todo, Project, Task, Priority } from "./structures";
 
 export default function JsonToTodo(file) {
     let todo = new Todo();

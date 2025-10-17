@@ -9,8 +9,8 @@ export class Todo {
     }
 
     removeProject(id) {
-        let project = this.projectList.find(p => p.id == id);
-        this.projectList.remove(project);
+        let index = this.projectList.findIndex(p => p.id == id);
+        this.projectList.splice(index, 1);
     }
 
     getProject(id) {
@@ -33,9 +33,9 @@ export class Project {
         this.taskList.push(task);
     }
 
-    remove(id) {
-        let task = this.taskList.find(t => t.id == id);
-        this.taskList.remove(task);
+    removeTask(id) {
+        let index = this.taskList.findIndex(t => t.id == id);
+        this.taskList.splice(index, 1);
     }
 
     getTask(id) {

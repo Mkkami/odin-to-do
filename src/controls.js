@@ -1,26 +1,36 @@
-import {Project, Task, Priority} from "./todo";
+import {Project, Task, Priority} from "./structures";
 import { isInStorage, getFromStorage, createEmptyTodo, saveTodo } from "./storage";
+import { createTaskDiv, createProjectItem } from "./view";
 
-function addTask(todo, project, name, desc, dueDate, priority) {
+
+import { state } from "./index"
+
+export function addTask(project, name, desc, dueDate, priority) {
     let task = new Task(name, desc, dueDate, priority);
     project.addTask(task);
-    //update view
+    createTaskDiv(task);
     saveTodo(todo);
 }
 
-function removeTask(todo, project, id) {
-    project.removeTask(id);
+export function removeTask(id) {
+    state.currentProject.removeTask(id);
     saveTodo(todo);
 }
 
-function addProject(todo, name) {
+export function addProject(name) {
     let project = new Project(name);
     todo.addProject(project);
+    createProjectItem(project);
     saveTodo(todo);
+    return project;
 }
 
-function removeProject(todo, id) {
+export function removeProject(id) {
     todo.removeProject(id);
     saveTodo(todo);
 }
 
+export function switchProject(project) {
+    state.currentProject = project;
+
+}
