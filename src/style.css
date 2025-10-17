@@ -62,6 +62,22 @@ button:hover {
     background-color: gray;
 }
 
+#sidebar > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+#remove-project {
+    margin: auto 0;
+    height: 50px;
+    width: 50px;
+}
+
+#remove-project:hover {
+    cursor:pointer;
+    transform: scale(1.2);
+}
+
 #content {
     padding: 2em 10%;
     display: flex;

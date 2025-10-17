@@ -86,3 +86,14 @@ export function clearButtonSelect() {
         b.removeAttribute('selected');
     }
 }
+
+export function removeProjectItem(id) {
+    const sidebar = document.querySelector("#sidebar");
+    for (let b of sidebar.children) {
+        if (b.getAttribute('data-id') === id) {
+            sidebar.removeChild(b);
+            clearTaskbox();
+            return;
+        }
+    }
+}

@@ -3,7 +3,7 @@ import "./style.css"
 import { createTask } from "./view";
 import { Todo, Project, Task, Priority } from "./structures";
 import { isInStorage, getFromStorage, createEmptyTodo, saveTodo } from "./storage";
-import { addProject, addTask, createProjectBtns } from "./controls";
+import { addProject, addTask, createProjectBtns, removeProject } from "./controls";
 
 export const state = {
     currentProject: null,
@@ -12,22 +12,10 @@ export const state = {
 
 if (isInStorage()) {
     state.todo = getFromStorage();
-    createProjectBtns();
-    console.log("is in storage");
 } else {
     state.todo = createEmptyTodo();
-    state.currentProject = state.todo.getFirstProject();
-    addTask(state.currentProject.getFirstTask());
-    createProjectBtns();
 }
-
-console.log(state);
-
-window.todo = state.todo;
-window.Project = Project;
-window.Task = Task;
-window.Priority = Priority;
-
+createProjectBtns();
 
 const dialogProject = document.querySelector("dialog#project");
 const dialogTask = document.querySelector("dialog#task");
@@ -80,4 +68,11 @@ formTask.addEventListener('submit', (e) => {
     formTask.reset();
 })
 
+const removeProjectBtn = document.querySelector("#remove-project");
 
+removeProjectBtn.addEventListener('click', () => {
+    if (state.currentProject == null || state.currentProject.id == "default") {
+        return;
+    }
+    removeProject(state.currentProject.id);
+})

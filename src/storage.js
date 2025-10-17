@@ -28,8 +28,8 @@ export function saveTodo(todo) {
 function createDefaultTodo() {
     let todo = new Todo();
     let project = new Project("Default");
-    
-    let task = new Task("That's a task", "That's a description", new Date(), Priority.Low, false);
+    project.id = "default";
+    let task = new Task("That's a task", "That's a description", new Date().toISOString().slice(0,10), Priority.Low, false);
     project.addTask(task);
     todo.addProject(project);
     return todo;
