@@ -29,7 +29,7 @@ export function removeProject(id) {
     if (id == 'default') {
         return;
     }
-    todo.removeProject(id);
+    state.todo.removeProject(id);
     removeProjectItem(id);
     saveTodo(state.todo);
 }
