@@ -41,6 +41,10 @@ export class Project {
     getTask(id) {
         return this.taskList.find(t => t.id == id);
     }
+
+    getFirstTask() {
+        return this.taskList[0];
+    }
 }
 
 export class Task {

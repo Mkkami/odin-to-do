@@ -31,7 +31,7 @@ export function createTaskDiv(task) {
     })
 
     const img = document.createElement("img");
-    // img.src = removeImg;
+    img.src = removeImg;
     img.alt="trash";
 
     remove.appendChild(img);

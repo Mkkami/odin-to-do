@@ -7,16 +7,21 @@
 body {
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    margin: 0;
 }
 
 * {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     box-sizing: border-box;
 }
 
 header {
     text-align: center;
     font-size: 1.5rem;
+    border-bottom: 3px ridge black;
+    background-image:
+        radial-gradient(white, lightgray)
 }
 
 button {
@@ -26,13 +31,13 @@ button {
 
 button:hover {
     cursor: pointer;
-    border: 1px solid red;
     background-color: lightgray;
 }
 
 #main {
     display: flex;
     /* min-height: 90vh; */
+    height: 100%;
 }
 
 
@@ -62,6 +67,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     flex: 4;
+    background-color: lightgray;
 }
 
 
@@ -71,6 +77,7 @@ button:hover {
     gap: 1em;
     box-shadow: 5px 5px 5px gray;
     margin: 1em;
+    background-color: white;
 }
 
 .task > div {
@@ -120,8 +127,24 @@ button:hover {
     font-size: 0.8rem;
 }
 
-.task .remove:hover {
+.task img {
+    height: 40px;
+    width: 40px;
+}
+
+.task button:hover {
     cursor: pointer;
-    background-color: inherit;
-    border: none;
+    background-color: white;
+}
+
+.task button:hover img {
+    transform: scale(1.2);
+}
+
+.add-task {
+    margin-left: 1rem;
+    padding: 1em 2em;
+    border-radius: 8px;
+    border: 1px solid gray;
+    box-shadow: 1px 1px 1px gray;
 }

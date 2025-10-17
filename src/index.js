@@ -16,6 +16,9 @@ if (isInStorage()) {
     console.log("is in storage");
 } else {
     state.todo = createEmptyTodo();
+    state.currentProject = state.todo.getFirstProject();
+    addTask(state.currentProject.getFirstTask());
+    createProjectBtns();
 }
 
 console.log(state);
