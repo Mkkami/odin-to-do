@@ -51,7 +51,7 @@ newTaskBtn.addEventListener('click', () => {
 formTask.addEventListener('submit', (e) => {
     let formdata = new FormData(formTask);
     addTask(state.currentProject, 
-        formdata.get('name'),
+        formdata.get('title'),
         formdata.get('description'),
         formdata.get('date'),
         formdata.get('priority')
