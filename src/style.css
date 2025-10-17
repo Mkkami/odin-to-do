@@ -148,3 +148,9 @@ button:hover {
     border: 1px solid gray;
     box-shadow: 1px 1px 1px gray;
 }
+
+dialog button {
+    border: 1px solid gray;
+    border-radius: 6px;
+    padding: 0.5em 1em;
+}

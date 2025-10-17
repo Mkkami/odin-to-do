@@ -22,7 +22,7 @@
             </div>
         </div>
     </div>
-    <dialog id="task">
+    <dialog id="task" closedby="closerequest">
         <form method="dialog">
             <p>
                 <label for="title">Title</label>
@@ -45,17 +45,17 @@
                 </select>
             </p>
             <button type="submit">Add</button>
-            <!-- <button type="button">Cancel</button> -->
+            <button type="button" class="cancel-btn" formnovalidate>Cancel</button>
         </form>
     </dialog>
-    <dialog id="project">
+    <dialog id="project" closedby="closerequest">
         <form method="dialog">
             <p>
                 <label for="title">Title</label>
                 <input name="title" id="title" type="text" required>
             </p>
             <button type="submit">Add</button>
-            <!-- <button type="button">Cancel</button> -->
+            <button type="button" class="cancel-btn" formnovalidate>Cancel</button>
         </form>
     </dialog>
 </body>
