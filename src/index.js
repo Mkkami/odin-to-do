@@ -1,31 +1,21 @@
 import "./style.css"
 
 import { createTask } from "./task";
+import { Todo, Project, Task, Priority } from "./todo";
+import { isInStorage, getFromStorage, createEmptyTodo, saveTodo } from "./storage";
 
-console.log("Hello there");
+let todo;
 
-if (!localStorage.getItem("todo")) {
-    const todo = {projects: []};
-    const project = {};
-    project.name = "Project 1";
-    project.tasks = [];
-
-    const task = {};
-    task.title = "TASK 1";
-    task.desc = "DESCRIPTIONNEN";
-
-    console.log(project);
-
-    project.tasks.push(task);
-
-    todo.projects.push(project);
-
-    localStorage.setItem("todo", JSON.stringify(todo));
-
-    createTask(project, task.title, task.desc);
+if (isInStorage()) {
+    todo = getFromStorage();
 } else {
-    const dd = localStorage.getItem("todo");
-    console.log(dd);
+    todo = createEmptyTodo();
 }
 
-createTask("", "TASK1", "desc");
+console.log(todo);
+
+window.todo = todo;
+window.Project = Project;
+window.Task = Task;
+window.Priority = Priority;
+// console.log(`siema: ${currentProject}`);

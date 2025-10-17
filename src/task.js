@@ -1,8 +1,10 @@
 import removeImg from './img/trash-can-outline.svg';
 
-export function createTaskDiv(title, desc) {
-    const task = document.createElement("div");
-    task.classList.add("task");
+import {Project, Task, Priority} from "./todo";
+
+export function createTaskDiv(task) {
+    const taskDiv = document.createElement("div");
+    taskDiv.classList.add("task");
 
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
@@ -10,9 +12,9 @@ export function createTaskDiv(title, desc) {
     const text = document.createElement("div");
     
     const titleP = document.createElement("p");
-    titleP.textContent = title;
+    titleP.textContent = task.name;
     const descP = document.createElement("p");
-    descP.textContent = desc;
+    descP.textContent = task.desc;
 
     text.appendChild(titleP);
     text.appendChild(descP);
@@ -25,27 +27,10 @@ export function createTaskDiv(title, desc) {
 
     remove.appendChild(img);
 
-    task.appendChild(checkbox);
-    task.appendChild(text);
-    task.appendChild(remove);
+    taskDiv.appendChild(checkbox);
+    taskDiv.appendChild(text);
+    taskDiv.appendChild(remove);
 
-    return task;
+    return taskDiv;
 
 }
-
-export function createTask(project, title, desc) {
-    const task = createTaskDiv(title, desc);
-    const taskbox = document.querySelector(".taskbox");
-    taskbox.appendChild(task);
-}
-
-// function createTest(project, title, desc) {
-//     const todo = {}
-//     const p = {}
-//     const task = {}
-//     task.title = title;
-//     task.desc = desc;
-//     p.add(task)
-//     todo.add(task)
-//     localStorage.setItem("todo", todo);
-// }
