@@ -100,7 +100,7 @@ button:hover {
     height: 1rem;
     content: "";
     transform: scale(0);
-    box-shadow: inset 1.5rem 1.5rem red;
+    box-shadow: inset 1.5rem 1.5rem palevioletred;
 }
 
 .task input:checked::before {
@@ -140,6 +140,19 @@ button:hover {
 .task button:hover img {
     transform: scale(1.2);
 }
+
+.task[priority="High"] {
+    border: 1px solid red;
+}
+
+.task[priority="Medium"] {
+    border: 1px solid orange;
+}
+
+.task[priority="Low"] {
+    border: 1px solid green;
+}
+
 
 .add-task {
     margin-left: 1rem;

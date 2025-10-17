@@ -17,11 +17,17 @@ export function createTaskDiv(task) {
     
     const titleP = document.createElement("p");
     titleP.textContent = task.name;
+    titleP.classList.add('title');
     const descP = document.createElement("p");
     descP.textContent = task.desc;
+    descP.classList.add('description');
 
     text.appendChild(titleP);
     text.appendChild(descP);
+
+    const time = document.createElement("p");
+    time.textContent = task.dueDate;
+
 
     const remove = document.createElement("button");
 
@@ -38,7 +44,10 @@ export function createTaskDiv(task) {
 
     taskDiv.appendChild(checkbox);
     taskDiv.appendChild(text);
+    taskDiv.appendChild(time);
     taskDiv.appendChild(remove);
+
+    taskDiv.setAttribute('priority', task.priority);
 
     // taskbox.appendChild(taskDiv);
     taskbox.insertBefore(taskDiv, taskbox.lastElementChild);
