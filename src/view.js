@@ -42,7 +42,6 @@ export function createTaskDiv(task) {
 
     // taskbox.appendChild(taskDiv);
     taskbox.insertBefore(taskDiv, taskbox.lastElementChild);
-    console.log(task);
 }
 
 export function createProjectItem(project) {
@@ -54,9 +53,9 @@ export function createProjectItem(project) {
     projectBtn.textContent = project.name;
     
     projectBtn.addEventListener('click', () => {
-        switchProject(project);
         clearButtonSelect();
         clearTaskbox();
+        switchProject(project);
         projectBtn.setAttribute('selected', '');
     })
 
@@ -67,7 +66,7 @@ export function clearTaskbox() {
     const taskbox = document.querySelector(".taskbox");
     for (let child of Array.from(taskbox.children)) {
         if (!child.classList.contains("add-task")) {
-            taskbox.remove(child);
+            taskbox.removeChild(child);
         }
     }
 }

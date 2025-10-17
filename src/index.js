@@ -3,7 +3,7 @@ import "./style.css"
 import { createTask } from "./view";
 import { Todo, Project, Task, Priority } from "./structures";
 import { isInStorage, getFromStorage, createEmptyTodo, saveTodo } from "./storage";
-import { addProject, addTask } from "./controls";
+import { addProject, addTask, createProjectBtns } from "./controls";
 
 export const state = {
     currentProject: null,
@@ -12,6 +12,8 @@ export const state = {
 
 if (isInStorage()) {
     state.todo = getFromStorage();
+    createProjectBtns();
+    console.log("is in storage");
 } else {
     state.todo = createEmptyTodo();
 }

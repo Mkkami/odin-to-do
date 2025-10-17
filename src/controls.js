@@ -32,5 +32,20 @@ export function removeProject(id) {
 
 export function switchProject(project) {
     state.currentProject = project;
+    if (project.taskList.length == 0) {
+        return;
+    }
+    for (let t of project.taskList) {
+        createTaskDiv(t);
+    }
+}
 
+export function createProjectBtns() {
+    let pList = state.todo.projectList;
+    if (pList.length == 0) {
+        return;
+    }
+    for (let p of pList) {
+        createProjectItem(p);
+    }
 }
